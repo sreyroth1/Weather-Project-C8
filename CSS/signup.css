@@ -62,7 +62,7 @@ body {
     text-align: left;
     margin-top: 4px;
 }
-.btn-sign-up {
+#btn-sign-up {
     padding: 14px;
     border: none;
     background: #3e3e3e6a;

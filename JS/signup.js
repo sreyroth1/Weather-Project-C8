@@ -1,38 +1,52 @@
-// This is the variable declared 
-
 const textValidation = document.getElementById("text-validation");
+const usernameInput = document.getElementById('username');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirm_password');
+const form = document.getElementById('signup-form');
 
-const password = document.getElementById('password');
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // ❗ stop page refresh
 
-const username = document.getElementById('username')
+    const username = usernameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
 
-const email = document.getElementById('email')
+    if (!username || !email || !password || !confirmPassword) {
+        alert("Please fill in all the information.");
+        return;
+    }
 
-const confirmPassword = document.getElementById('confirm_password')
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters.");
+        return;
+    }
 
-// This is localstorage when I put the information it will store in browser
-const userData = {
-  username,
-  email,
-  password,
-  confirmPassword
-};
+    if (password !== confirmPassword) {
+        alert("Password and Confirm Password do not match!");
+        return;
+    }
 
-localStorage.setItem("user", JSON.stringify(userData));
+    const userData = {
+        username,
+        email,
+        password
+    };
 
+    localStorage.setItem("user", JSON.stringify(userData));
 
+    alert("Sign up successful!");
 
-// This is code validation password if the password less than 8 text red, and if the passoword more than 8 the text green
+    // ✅ redirect to another page
+    window.location.href = "login.html";
+});
 
-
-password.addEventListener('input', function(){
-    const passwordValue = password.value;
-    if (passwordValue.length >= 8) {
+passwordInput.addEventListener('input', function () {
+    if (passwordInput.value.length >= 8) {
         textValidation.style.color = 'green';
-        textValidation.style.display = 'block';
-    }
-    else{
+    } else {
         textValidation.style.color = 'red';
-        textValidation.style.display = 'block';
     }
-})
+    textValidation.style.display = 'block';
+});
