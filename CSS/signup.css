@@ -17,7 +17,7 @@ body {
 }
 
 .signup-container {
-    background: #ffffff1f;
+    background: #ffffffd3;
     width: 100%;
     max-width: 360px;
     padding: 28px;
@@ -25,12 +25,10 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     background: rgba(50, 44, 44, 0.177);
     backdrop-filter: blur(10px);
-}
-
-.signup-container {
     text-align: center;
     margin-bottom: 20px;
 }
+
 .signup-container h2{
     color: white;
 }
@@ -41,7 +39,7 @@ body {
 .form-group label {
     text-align: left;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     display: block;
     margin-bottom: 6px;
 }
@@ -58,7 +56,12 @@ body {
     outline: none;
     border-color: #2563eb;
 }
-
+.form-group p{
+    display: none;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 4px;
+}
 .btn-sign-up {
     padding: 14px;
     border: none;
