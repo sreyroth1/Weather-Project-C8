@@ -5,6 +5,9 @@ const passwordInput = document.getElementById('password');
 const confirmPasswordInput = document.getElementById('confirm_password');
 const form = document.getElementById('signup-form');
 
+
+const users = JSON.parse(localStorage.getItem("users")) || [];
+
 form.addEventListener('submit', function (e) {
     e.preventDefault(); // ❗ stop page refresh
 
@@ -34,12 +37,13 @@ form.addEventListener('submit', function (e) {
         password
     };
 
-    localStorage.setItem("user", JSON.stringify(userData));
+    users.push(userData);
+
+    localStorage.setItem("users", JSON.stringify(users));
 
     alert("Sign up successful!");
-
-    // ✅ redirect to another page
     window.location.href = "/index.html";
+    
 });
 
 passwordInput.addEventListener('input', function () {
