@@ -27,6 +27,7 @@ showPassword.addEventListener('click',function(){
 
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
+
 form.addEventListener('submit', function (e) {
     e.preventDefault(); // ❗ stop page refresh
 
