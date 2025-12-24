@@ -39,7 +39,7 @@ form.addEventListener('submit', function (e) {
     alert("Sign up successful!");
 
     // ✅ redirect to another page
-    window.location.href = "login.html";
+    window.location.href = "/index.html";
 });
 
 passwordInput.addEventListener('input', function () {
