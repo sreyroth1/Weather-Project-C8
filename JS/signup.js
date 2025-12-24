@@ -5,6 +5,7 @@ const passwordInput = document.getElementById('password');
 const confirmPasswordInput = document.getElementById('confirm_password');
 const form = document.getElementById('signup-form');
 
+
 form.addEventListener('submit', function (e) {
     e.preventDefault(); // ❗ stop page refresh
 
