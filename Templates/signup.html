@@ -10,25 +10,44 @@
     <div class="signup-container">
         <h2>Sign Up</h2>
 
-        <form action="sign-up">
+        <form action="sign-up" id="signup-form">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Enter username">
+                <input type="text" 
+                name="username" 
+                id="username" 
+                placeholder="Enter username">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Enter email">
+                <input type="email" 
+                name="email" 
+                id="email" 
+                placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Enter password">
+                <input type="password" 
+                name="password" 
+                id="password" 
+                placeholder="Enter password">
+
+                <p id="text-validation">Password must be at least 8 characters</p>
             </div>
             <div class="form-group">
                 <label for="confirm-password">Comfirm Password</label>
-                <input type="text" name="confirm-password" id="confirm-password" placeholder="Confirm password">
+                <input type="password" 
+                name="confirm-password" 
+                id="confirm_password" 
+                placeholder="Confirm password">
+                <div class="show-password">
+                    <input type="checkbox" name="show-ps" id="show-ps">
+                    <label for="show-ps">Show Password</label>
+                </div>
+                
             </div>
 
-            <button class="btn-sign-up" type="submit">Sign Up</button>
+            <button id="btn-sign-up" type="submit">Sign Up</button>
 
             <div class="goToLogin">
                 Already have an account? <a href="#">Go to Login</a>
@@ -37,5 +56,6 @@
 
 
     </div>
+    <script src="/JS/signup.js"></script>
 </body>
 </html>
