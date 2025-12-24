@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/background-sign-up.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.signup-container {
+    background: #ffffffd3;
+    width: 100%;
+    max-width: 360px;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(50, 44, 44, 0.177);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-container h2{
+    color: white;
+}
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    text-align: left;
+    color: white;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+.form-group p{
+    display: none;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 4px;
+}
+#btn-sign-up {
+    padding: 14px;
+    border: none;
+    background: #3e3e3e6a;
+    color: white;
+    border-radius: 10px;
+    border-bottom: 3px solid rgba(143, 143, 143, 0.434);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.goToLogin {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: white;
+}
+
+
+.goToLogin a {
+    color: #2563eb;
+    text-decoration: none;
+}
