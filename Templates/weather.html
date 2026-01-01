@@ -23,11 +23,18 @@
         <img class="header__logo" src="/images/logo-weather.png" alt="Weather Now Home" width="197" height="40">
       </a>
 
-      <select class="dropdown header__dropdown" name="units" id="ddlUnits">
-        <option value="">Units</option>
-        <option value="C">&deg;C</option>
-        <option value="F">&deg;F</option>
-      </select>
+      <div class="header__left">
+        <a class="weather__page" href="#"> ⛅ <span>Weather</span></a>
+        <a class="map__page" href="#"> 🗺️ <span>Map</span></a>
+        <a class="contact__page" href="#"> 📞 <span>Contact</span></a>
+
+        <select class="dropdown header__dropdown" name="units" id="ddlUnits">
+          <option value="">Units</option>
+          <option value="C">&deg;C</option>
+          <option value="F">&deg;F</option>
+        </select>
+      </div>
+
     </div>
 
   </header>
@@ -105,7 +112,7 @@
 
           <div class="hourly__hours">
             <div id="dvForecastHour1" class="hourly__hour"></div>
-                <div id="dvForecastHour2" class="hourly__hour"></div>
+            <div id="dvForecastHour2" class="hourly__hour"></div>
             <div id="dvForecastHour3" class="hourly__hour"></div>
             <div id="dvForecastHour4" class="hourly__hour"></div>
             <div id="dvForecastHour5" class="hourly__hour"></div>

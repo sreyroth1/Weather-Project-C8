@@ -59,14 +59,14 @@ async function getGeoData() {
 
 function loadLocationData(locationData) {
   let location = locationData[0].address;
-  
-  cityName = location.city || 
-             location.town || 
-             location.village || 
-             location.suburb || 
-             location.county ||
-             location.country || 
-             "Unknown Location";
+
+  cityName = location.city ||
+    location.town ||
+    location.village ||
+    location.suburb ||
+    location.county ||
+    location.country ||
+    "Unknown Location";
   countryName = location.country_code ? location.country_code.toUpperCase() : "??";
 
   let dateOptions = {

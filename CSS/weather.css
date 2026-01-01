@@ -231,6 +231,22 @@
             padding-block-start: 16px;
         }
 
+        .header__left{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+        }
+        .map__page, .contact__page, .weather__page{
+            color: white;
+            text-decoration: none;
+            transition: 0.3s ease-in-out;
+        }
+        .map__page:hover, .contact__page:hover, .weather__page:hover{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            transform: scale(1.1, 1.1);
+        }
 
         .header__logo {
             width: calc(137 / 16 * 1rem);
@@ -245,6 +261,10 @@
             .header__logo {
                 width: calc(50 / 16 * 1rem);
                 height: calc(50 / 16 * 1rem);
+            }
+
+            .header__left {
+                gap: 32px;
             }
         }
 
