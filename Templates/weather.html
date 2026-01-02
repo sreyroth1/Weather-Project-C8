@@ -11,6 +11,7 @@
   <title>Frontend Mentor | Weather app</title>
   <link rel="stylesheet" href="/CSS/weather.css">
   <script src="/JS/weather.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -19,25 +20,43 @@
 
   <header class="header wrapper">
     <div class="header__content">
+
+      <!-- Logo -->
       <a class="header__homelink" href="/Templates/weather.html">
-        <img class="header__logo" src="/images/logo-weather.png" alt="Weather Now Home" width="197" height="40">
+        <img class="header__logo" src="/images/logo-weather.png" alt="Weather Now Home">
       </a>
 
-      <div class="header__left">
-        <a class="weather__page" href="#"> ⛅ <span>Weather</span></a>
-        <a class="map__page" href="#"> 🗺️ <span>Map</span></a>
-        <a class="contact__page" href="#"> 📞 <span>Contact</span></a>
+      <!-- Desktop Navigation -->
+      <nav class="nav">
+        <a href="/Templates/map.html" class="nav__link"><i class="fa-regular fa-map"></i> Map</a>
+        <a href="#" class="nav__link active"><i class="fa-solid fa-cloud"></i> Weather</a>
+        <a href="/Templates/contactUs.html" class="nav__link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      </nav>
 
+      <!-- Right Actions -->
+      <div class="header__actions">
         <select class="dropdown header__dropdown" name="units" id="ddlUnits">
           <option value="">Units</option>
-          <option value="C">&deg;C</option>
-          <option value="F">&deg;F</option>
+          <option value="C">°C</option>
+          <option value="F">°F</option>
         </select>
+
+        <a href="/index.html"><button class="login-btn">Log In</button></a>
+
+        <!-- Mobile Menu Button -->
+        <button class="menu-btn" id="menuBtn">☰</button>
       </div>
 
     </div>
 
+    <!-- Mobile Dropdown -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/Templates/map.html">Map</a>
+      <a href="#" class="active">Weather</a>
+      <a href="/Templates/contactUs.html">Contact Us</a>
+    </div>
   </header>
+
 
   <main id="main" class="main wrapper">
 
@@ -144,7 +163,21 @@
 
 
   </main>
+<footer class="footer__content">
+  <div class="footer__left">
+    <p>@2026 Weather. All rights reserved by SISRSO</p>
+  </div>
+  <div class="footer__right">
+    <a href="#">Privacy Policy</a>
+    <span>||</span>
+    <a href="#">Map</a>
+    <span>||</span>
+    <a href="#">Weather</a>
+    <span>||</span>
+    <a href="#">Contact us</a>
 
+  </div>
+</footer>
 
 </body>
 

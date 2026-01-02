@@ -153,6 +153,119 @@
         border: none;
     }
 
+    /* ================= NAVBAR ================= */
+
+    .header {
+        position: relative;
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        background:#03012d;
+        padding-bottom: 12px;
+    }
+
+    .header__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block-start: 16px;
+    }
+
+    .nav a {
+        position: relative;
+        text-decoration: none;  
+        color: white;
+        font-size: 18px;
+        margin: 5px 16px;
+        
+    }
+    .nav a i {
+        color: #007bff;
+    }
+
+    /* underline */
+    .nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 4px;
+        background-color: #007bff;
+        transition: width 0.3s ease;
+    }
+
+    /* hover effect */
+    .nav a:hover::after {
+        width: 100%;
+    }
+
+
+    .header__actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .login-btn {
+        background-color: var(--c-blue-500);
+        color: white;
+        padding: 10px 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .login-btn:hover {
+        background-color: var(--c-blue-700);
+    }
+
+    /* Hamburger */
+    .menu-btn {
+        display: none;
+        background: var(--color-panel-bg-dark);
+        color: white;
+        font-size: 20px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        right: 16px;
+        top: 80px;
+        background: var(--color-panel-bg-dark);
+        border-radius: 14px;
+        padding: 16px;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 100;
+    }
+
+    .mobile-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .mobile-menu a.active {
+        color: var(--c-blue-500);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .nav {
+            display: none;
+        }
+
+        .menu-btn {
+            display: block;
+        }
+    }
+
     .wrapper {
         display: grid;
         grid-template-columns: 1fr calc(100% - 32px) 1fr;
@@ -231,18 +344,24 @@
             padding-block-start: 16px;
         }
 
-        .header__left{
+        .header__left {
             display: flex;
             gap: 8px;
             align-items: center;
 
         }
-        .map__page, .contact__page, .weather__page{
+
+        .map__page,
+        .contact__page,
+        .weather__page {
             color: white;
             text-decoration: none;
             transition: 0.3s ease-in-out;
         }
-        .map__page:hover, .contact__page:hover, .weather__page:hover{
+
+        #map__page:hover,
+        #contact__page:hover,
+        #weather__page:hover {
             color: rgb(255, 255, 255);
             text-decoration: none;
             transform: scale(1.1, 1.1);
@@ -264,8 +383,9 @@
             }
 
             .header__left {
-                gap: 32px;
+                gap: 16px;
             }
+
         }
 
 
@@ -541,4 +661,24 @@
             justify-self: end;
         }
     }
+}
+
+.footer__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 160px;
+    margin-top: 60px;
+    width: 100%;
+    background: #272541;
+    height: 60px;
+    margin-bottom: -400px;
+}
+.footer__right a {
+    color: white;
+    text-decoration: none;
+}
+.footer__right span {
+    color: #4455da;
+    text-decoration: none;
 }
