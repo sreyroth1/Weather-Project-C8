@@ -1,5 +1,6 @@
-document.getElementById("contactForm");
-document.addEventListener("submit", function (event) {
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   // Get form values
@@ -13,11 +14,34 @@ document.addEventListener("submit", function (event) {
     alert("Please fill in all required fields.");
     return;
   }
-  //show a confirmation message
+
+  // Show confirmation alert FIRST
   alert(
     `Thank you, ${firstName} ${lastName}! Your message has been sent. We'll respond to ${email} soon.`
   );
 
+  // ✅ Store data AFTER clicking OK
+  const userInfo = JSON.parse(localStorage.getItem("userInfo")) || [];
+
+  const userInformation = {
+    firstName,
+    lastName,
+    email,
+    message,
+  };
+
+  userInfo.push(userInformation);
+  localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
   // Reset form
-  document.getElementById("contactForm").reset();
+  contactForm.reset();
+});
+
+// Mobile menu
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.style.display =
+    mobileMenu.style.display === "flex" ? "none" : "flex";
 });
