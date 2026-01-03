@@ -3,27 +3,76 @@
      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
+:root {
+        --c-neutral-900: hsl(243, 96%, 9%);
+        --c-neutral-800: hsl(243, 27%, 20%);
+        --c-neutral-700: hsl(243, 23%, 24%);
+        --c-neutral-600: hsl(243, 23%, 30%);
+        --c-neutral-300: hsl(240, 6%, 70%);
+        --c-neutral-200: hsl(250, 6%, 84%);
+        --c-neutral-0: hsl(0, 0%, 100%);
+        --c-orange-500: hsl(28, 100%, 52%);
+        --c-blue-500: hsl(233, 67%, 56%);
+        --c-blue-700: hsl(248, 70%, 36%);
 
+        --color-main-bg: var(--c-neutral-900);
+        --color-text-light: var(--c-neutral-0);
+        --color-text-med-light: var(--c-neutral-200);
+        --color-panel-bg-dark: var(--c-neutral-800);
+        --color-panel-bg-dark-hover: var(--c-neutral-700);
+        --color-panel-bg-med: var(--c-neutral-700);
+        --color-panel-bg-light: var(--c-neutral-600);
+        --color-panel-border: var(--c-neutral-600);
+        --color-button-bg: var(--c-blue-500);
+        --color-button-bg-hover: var(--c-blue-700);
+
+        --fs-96: calc(96 / 16 * 1rem);
+        --fs-52: calc(52 / 16 * 1rem);
+        --fs-32: calc(32 / 16 * 1rem);
+        --fs-28: calc(28 / 16 * 1rem);
+        --fs-20: calc(20 / 16 * 1rem);
+        --fs-18: calc(18 / 16 * 1rem);
+        --fs-16: calc(16 / 16 * 1rem);
+        --fs-14: calc(14 / 16 * 1rem);
+
+        --font-size-h1: var(--fs-52);
+        --font-size-dropdown: var(--fs-14);
+        --font-size-search: var(--fs-20);
+        --font-size-city: var(--fs-28);
+        --font-size-date: var(--fs-18);
+        --font-size-temp: var(--fs-96);
+        --font-size-panel-title: var(--fs-18);
+        --font-size-panel-value: var(--fs-32);
+        --font-size-forecast-title: var(--fs-20);
+        --font-size-forecast-day: var(--fs-18);
+        --font-size-forecast-temp: var(--fs-16);
+        --font-size-forecast-dropdown: var(--fs-16);
+        --font-size-forecast-hour: var(--fs-20);
+
+        @media (width >=calc(700 / 16 * 1rem)) {
+            --font-size-dropdown: var(--fs-16);
+        }
+    }
 body {
     margin: 0;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(/images/background-sign-up.png);
+    /* background-image: url(/images/background-sign-up.png); */
+    background-color: hsl(243, 96%, 9%);;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .signup-container {
-    background: #ffffffd3;
     width: 100%;
     max-width: 360px;
     padding: 28px;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    background: rgba(50, 44, 44, 0.177);
+    background: rgba(255, 255, 255, 0.149);
     backdrop-filter: blur(10px);
     text-align: center;
     margin-bottom: 20px;
@@ -65,12 +114,16 @@ body {
 #btn-sign-up {
     padding: 14px;
     border: none;
-    background: #3e3e3e6a;
+    background: #2563eb;
     color: white;
     border-radius: 10px;
-    border-bottom: 3px solid rgba(143, 143, 143, 0.434);
+    border-bottom: 3px solid #a5a5a55b;
     font-size: 14px;
     font-weight: bold;
+}
+#btn-sign-up:hover {
+
+    cursor: pointer;
 }
 
 .goToLogin {
