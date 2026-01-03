@@ -106,3 +106,90 @@ h5{
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
 }
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Large tablets & small laptops */
+@media (max-width: 1200px) {
+  .container .card {
+    width: 40%;
+    height: auto;
+    padding: 20px 0;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .container .card {
+    width: 50%;
+    height: auto;
+    padding: 20px 0;
+  }
+}
+
+/* Large phones */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container .card {
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 576px) {
+  .container {
+    padding: 16px;
+  }
+
+  .container .card {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  form {
+    margin: 0 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .btn button {
+    width: 100%;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .group-form label {
+    font-size: 13px;
+  }
+
+  .btn button {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
