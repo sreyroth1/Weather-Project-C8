@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather-page-map</title>
-    <link rel="stylesheet" href="/CSS/map.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather-page-map</title>
+  <link rel="stylesheet" href="/CSS/map.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-measure@3.0.0/dist/leaflet-measure.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-measure@3.0.0/dist/leaflet-measure.js"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <nav>
-        <div class="main-navbar">
-            <div class="logo-web">
-                <img src="/images/logo-weather.png" alt="">
-                <div class="group-text-navbar">
-                    <h2>PNC WETHER</h2>
-                    <p>Passerelles numeriques</p>
-                </div>
-            </div>
-            <div class="navbar-page">
-                <li><a href="./weather.html">Weather</a></li>
-                <li><a href="./map.html">Map</a></li>
-                <li><a href="./contactUs.html">Contact us</a></li>
-            </div>
-        </div>
-    </nav>
+  <a href="#main" class="visually-hidden skip-link">Skip to main content</a>
+
+  <header class="header wrapper">
+    <div class="header__content">
+
+      <!-- Logo -->
+      <a class="header__homelink" href="/Templates/weather.html">
+        <img class="header__logo" src="/images/logo-weather.png" alt="Weather Now Home">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav">
+        <a href="/Templates/map.html" class="nav__link"><i class="fa-regular fa-map"></i> Map</a>
+        <a href="/Templates/weather.html" class="nav__link "><i class="fa-solid fa-cloud"></i> Weather</a>
+        <a href="/Templates/contactUs.html" class="nav__link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="header__actions">
+        <a href="/index.html"><button class="login-btn">Log In</button></a>
+        <!-- Mobile Menu Button -->
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" class="active">Map</a>
+      <a href="./weather.html" >Weather</a>
+      <a href="/Templates/contactUs.html">Contact Us</a>
+    </div>
+  </header>
+
+  <div id="map"></div>
+
+  <!-- NEW: Bottom Toolbar -->
+  <div class="bottom-toolbar">
+    <button class="play-btn" id="animateBtn">▶️</button>
+    <div id="currentTime">Loading time...</div>
+    <button class="toolbar-btn" id="toggleControls" style="display: block;">
+      <lord-icon src="https://cdn.lordicon.com/wixhsrdu.json" trigger="hover" stroke="bold" </lord-icon>
+    </button>
+    <button class="toolbar-btn" id="toggleInfo">
+      <lord-icon src="https://cdn.lordicon.com/iuvnsegf.json" trigger="hover" stroke="bold" </lord-icon>
+    </button>
+  </div>
+
+  <div class="control-panel" id="controlPanel">
+    <div class="control-group">
+      <label>Weather Overlay</label>
+      <select id="weatherLayer">
+        <option value="clouds">☁️ Clouds (Satellite)</option>
+        <option value="precipitation">🌧️ Precipitation</option>
+        <option value="wind">💨 Wind Speed</option>
+        <option value="temperature">🌡️ Temperature</option>
+        <option value="pressure">📊 Pressure</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label>Opacity</label>
+      <input type="range" id="opacity" min="0" max="1" step="0.1" value="0.7">
+    </div>
+    <div class="control-group">
+      <label>Base Map</label>
+      <select id="baseMap">
+        <option value="satellite">🛰️ Satellite</option>
+        <option value="dark">🌑 Dark (IR-like)</option>
+        <option value="terrain">🏔️ Terrain</option>
+        <option value="streets">🛣️ Streets</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="info-panel" id="infoPanel">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search location...">
+      <button id="searchBtn">🔍</button>
+    </div>
+    <div id="weatherInfo">-</div>
+    <hr>
+  </div>
+  <script src="/JS/map.js"></script>
 </body>
+
 </html>
