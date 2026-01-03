@@ -1,27 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather-page-contact</title>
-    <link rel="stylesheet" href="/CSS/map.css">
-</head>
-<body>
-    <nav>
-        <div class="main-navbar">
-            <div class="logo-web">
-                <img src="/images/logo-weather.png" alt="">
-                <div class="group-text-navbar">
-                    <h2>PNC WETHER</h2>
-                    <p>Passerelles numeriques</p>
-                </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo-weather.png">
+
+  <title>Frontend Mentor | Weather app</title>
+  <link rel="stylesheet" href="../CSS/contactUs.css">
+  <script src="/JS/weather.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <body>
+   <a href="#main" class="visually-hidden skip-link">Skip to main content</a>
+
+  <header class="header wrapper">
+    <div class="header__content">
+
+      <!-- Logo -->
+
+      <a class="header__homelink" href="/Templates/weather.html">
+        <img class="header__logo" src="../images/logo-weather.png" alt="Weather Now Home">
+      </a>
+
+      <!-- Desktop Navigation -->
+
+      <nav class="nav">
+        <a href="../Templates/map.html" class="nav__link"><i class="fa-regular fa-map"></i> Map</a>
+        <a href="../Templates/weather.html" class="nav__link active"><i class="fa-solid fa-cloud"></i> Weather</a>
+        <a href="../Templates/contactUs.html" class="nav__link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <!-- <div class="header__actions">
+        <select class="dropdown header__dropdown" name="units" id="ddlUnits">
+          <option value="">Units</option>
+          <option value="C">°C</option>
+          <option value="F">°F</option>
+        </select> -->
+
+        <a href="/index.html"><button class="login-btn">Log In</button></a>
+
+        <!-- Mobile Menu Button -->
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="./map.html">Map</a>
+      <a href="./weather.html" >Weather</a>
+      <a href="#" class="active">Contact Us</a>
+    </div>
+  </header>
+    <div class="container">
+      <!-- Sidebar with contact information -->
+      <div class="sidebar">
+        <h1>Let's talk on <span>something great</span> together</h1>
+        <p>Any questions or remarks? Just write us a message !</p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
             </div>
-            <div class="navbar-page">
-                <li><a href="./weather.html">Weather</a></li>
-                <li><a href="./map.html">Map</a></li>
-                <li><a href="./contactUs.html">Contact us</a></li>
+            <div class="contact-details">
+              <p>weather@gmail.com</p>
             </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <p>+855 12 345 678</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <p>
+                BP 511, Phum Tropeang Chhuk (Borey Sorla) Sangtak, Street 371,
+                Phnom Penh
+              </p>
+            </div>
+          </div>
         </div>
-    </nav>
-</body>
+      </div>
+
+      <!-- Contact Form -->
+       
+      <div class="contact-form">
+        <h2 class="form-title">Send message</h2>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#000b76" fill-opacity="1" d="M0,160L80,149.3C160,139,320,117,480,138.7C640,160,800,224,960,208C1120,192,1280,96,1360,48L1440,0L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    </svg>
+    <footer class="footer__content">
+  <div class="footer__left">
+    <p>@2026 Weather. All rights reserved by SISRSO</p>
+  </div>
+  <div class="footer__right">
+    <a href="#">Privacy Policy</a>
+    <span>||</span>
+    <a href="./map.html">Map</a>
+    <span>||</span>
+    <a href="./weather.html">Weather</a>
+    <span>||</span>
+    <a href="#">Contact us</a>
+
+  </div>
+</footer>
+
+    <script src="../JS/contactUs.js"></script>
+    
+  </body>
 </html>
