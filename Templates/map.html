@@ -19,37 +19,61 @@
 <body>
   <a href="#main" class="visually-hidden skip-link">Skip to main content</a>
 
-  <header class="header wrapper">
+ <header class="header wrapper">
     <div class="header__content">
 
-      <!-- Logo -->
-      <a class="header__homelink" href="/Templates/weather.html">
-        <img class="header__logo" src="/images/logo-weather.png" alt="Weather Now Home">
-      </a>
+        <!-- Logo -->
+        <a class="header__homelink" href="/Templates/weather.html">
+            <img class="header__logo" src="/images/logo-weather.png" alt="Weather Now Home">
+        </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="nav">
-        <a href="/Templates/map.html" class="nav__link"><i class="fa-regular fa-map"></i> Map</a>
-        <a href="/Templates/weather.html" class="nav__link "><i class="fa-solid fa-cloud"></i> Weather</a>
-        <a href="/Templates/contactUs.html" class="nav__link"><i class="fa-solid fa-phone"></i> Contact Us</a>
-      </nav>
+        <!-- Desktop Navigation -->
+        <nav class="nav">
+            <a href="/Templates/map.html" class="nav__link"><i class="fa-regular fa-map"></i> Map</a>
+            <a href="/Templates/weather.html" class="nav__link "><i class="fa-solid fa-cloud"></i> Weather</a>
+            <a href="/Templates/contactUs.html" class="nav__link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+        </nav>
 
-      <!-- Right Actions -->
-      <div class="header__actions">
-        <a href="/index.html"><button class="login-btn">Log In</button></a>
+        <!-- Right Actions -->
+        <div class="header__actions" id="authSection">
+            <!-- Dynamic trigger here -->
+        </div>
+
         <!-- Mobile Menu Button -->
         <button class="menu-btn" id="menuBtn">☰</button>
-      </div>
-
     </div>
 
     <!-- Mobile Dropdown -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#" class="active">Map</a>
-      <a href="./weather.html" >Weather</a>
-      <a href="/Templates/contactUs.html">Contact Us</a>
+        <a href="/Templates/map.html" class="active">Map</a>
+        <a href="./weather.html">Weather</a>
+        <a href="/Templates/contactUs.html">Contact Us</a>
+        <div class="header__actions" id="authSection">
+            <!-- Dynamic trigger here -->
+        </div>
     </div>
-  </header>
+</header>
+
+<!-- Profile Dropdown (moved outside for absolute positioning) -->
+<div id="profileDropdown" class="profile-dropdown">
+    <div class="profile-header">
+        <img id="dropdownPhoto" src="/images/default-profile.png" alt="Profile Photo">
+        <div class="profile-info">
+            <div id="dropdownUsername" class="username">You</div>
+            <div id="dropdownEmail" class="email">email@example.com</div>
+        </div>
+    </div>
+    <div class="dropdown-item" id="changePhotoItem">
+        <i class="fas fa-camera"></i> Change profile photo
+    </div>
+    <div class="dropdown-item" id="manageAccountItem">
+        <i class="fas fa-user-cog"></i> Manage your account
+    </div>
+    <hr class="divider">
+    <div class="dropdown-item" id="logoutItem">
+        <i class="fas fa-sign-out-alt"></i> Sign out
+    </div>
+</div>
 
   <div id="map"></div>
 
