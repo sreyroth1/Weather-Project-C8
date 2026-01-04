@@ -541,6 +541,9 @@ textarea {
 }
 
 @media (max-width: 600px) {
+  .login-btn{
+    width: 81px;
+  }
   .sidebar,
   .contact-form {
     padding: 30px 20px;
