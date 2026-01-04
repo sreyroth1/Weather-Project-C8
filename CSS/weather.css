@@ -698,3 +698,23 @@
     color: #4455da;
     text-decoration: none;
 }
+/* Mobile phones */
+@media (max-width: 576px) {
+  .footer__content {
+    padding: clamp(1rem, 4vw, 1.5rem) 1rem;
+    gap: 1rem;
+  }
+
+  .footer__right {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer__right span {
+    display: none; /* Hide separators on very small screens for cleaner look */
+  }
+
+  .footer__right a {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+}
